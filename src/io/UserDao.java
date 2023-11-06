@@ -2,6 +2,7 @@ package io;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -16,12 +17,18 @@ public class UserDao {
     }
 
     // B. User를 받아들여서 저장
-    public void saveUser(List<User> list) {
+    public void saveUser(Iterator<User> iter) {
+        List<User> users = new ArrayList<>();
+        while (iter.hasNext()){
+            // 하나씩 user 정보꺼내기
+            User user = iter.next();
+            users.add(user);
+        }
         // 객체를 파일에 쓴다 -> 직렬화
         // 파일 객체 생성
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))) {
             // ObjectOutputStream의 메소드, 매개변수로 파일에 쓰고자하는 객체 전달
-            out.writeObject(list);
+            out.writeObject(users);
         } catch (Exception ex) {
             // Exception 발생시 메시지 출력
             ex.printStackTrace();
