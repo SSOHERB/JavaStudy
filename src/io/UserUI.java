@@ -2,6 +2,7 @@ package io;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -21,6 +22,7 @@ public class UserUI {
         System.out.println("1. 회원 등록");
         System.out.println("2. 회원 목록 보기");
         System.out.println("3. 회원 정보 수정하기");
+        System.out.println("4. 회원 정보 삭제");
         System.out.println("5. 종료");
 
         int menuId = -1;
@@ -91,13 +93,24 @@ public class UserUI {
     }
 
     // C. 회원 리스트 출력 : User를 입력받아서 사이즈만큼 출력
-    public void printUserList(List<User> users){
+    public void printUserList(Iterator<User> iter){
         System.out.println("email         name          birth");
         System.out.println("=================================");
 
-        for(int i = 0; i < users.size(); i++){
+        /*for(int i = 0; i < users.size(); i++){
             // get(index) : user는 List 타입이므로 값 얻기
             User user = users.get(i);
+            System.out.print(user.getEmail());
+            System.out.print("         ");
+            System.out.print(user.getName());
+            System.out.print("         ");
+            System.out.print(user.getBirthYear());
+            System.out.println();
+        }*/
+
+        // List => Iterator로 변경되어서 반복문도 변경
+        while (iter.hasNext()){
+            User user = iter.next();
             System.out.print(user.getEmail());
             System.out.print("         ");
             System.out.print(user.getName());
