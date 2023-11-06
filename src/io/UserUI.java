@@ -12,10 +12,10 @@ import java.util.List;
  */
 public class UserUI {
     // 키보드로 부터 입력받는 객체
+    private BufferedReader br;
     public UserUI(){
         br = new BufferedReader(new InputStreamReader(System.in));
     }
-    private BufferedReader br;
 
     // A. 메뉴 입,출력
     public int menu(){
