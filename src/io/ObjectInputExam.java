@@ -3,6 +3,7 @@ package io;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
+// 객체의 클래스를 찾을 수 없는 예외 발생시 (ClassNotFoundException) 예외 던지기
 public class ObjectInputExam {
     public static void main(String[] args) throws Exception{
         // 파일 읽어오기
