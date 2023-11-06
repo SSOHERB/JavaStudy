@@ -14,7 +14,7 @@ public class ObjectInputExam2 {
         in.close();
 
         // list의 길이만큼 반복하면서 원소 출력
-        for(int i=0; i<list.size(); i++){
+        for(int i = 0; i < list.size(); i++){
             System.out.println(list.get(i));
         }
     }
