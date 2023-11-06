@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 public class ObjectOutputExam {
+    // 파일 열때, FileNotFoundException 발생하므로 IOException throws 처리
     public static void main(String[] args) throws Exception{
         // User 타입 객체 생성
         User user = new User("hong@hanmail.net", "Hong", 1992);
