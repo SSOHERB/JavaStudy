@@ -16,7 +16,7 @@ public class UserDao {
         this.filename = filename;
     }
 
-    // B. User를 받아들여서 저장
+    // B. Iterator타입의 User 형태를 받아들여서 저장
     public void saveUser(Iterator<User> iter) {
         List<User> users = new ArrayList<>();
         while (iter.hasNext()){
@@ -24,8 +24,8 @@ public class UserDao {
             User user = iter.next();
             users.add(user);
         }
-        // 객체를 파일에 쓴다 -> 직렬화
-        // 파일 객체 생성
+
+        // 파일 객체 생성해서 객체를 파일에 쓴다 -> 직렬화
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))) {
             // ObjectOutputStream의 메소드, 매개변수로 파일에 쓰고자하는 객체 전달
             out.writeObject(users);
