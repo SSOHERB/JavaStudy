@@ -3,7 +3,6 @@ package io;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * 메뉴,
@@ -96,17 +95,6 @@ public class UserUI {
     public void printUserList(Iterator<User> iter){
         System.out.println("email         name          birth");
         System.out.println("=================================");
-
-        /*for(int i = 0; i < users.size(); i++){
-            // get(index) : user는 List 타입이므로 값 얻기
-            User user = users.get(i);
-            System.out.print(user.getEmail());
-            System.out.print("         ");
-            System.out.print(user.getName());
-            System.out.print("         ");
-            System.out.print(user.getBirthYear());
-            System.out.println();
-        }*/
 
         // List => Iterator로 변경되어서 반복문도 변경
         while (iter.hasNext()){

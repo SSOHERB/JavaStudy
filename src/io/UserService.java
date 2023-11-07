@@ -1,7 +1,6 @@
 package io;
 
 import java.util.Iterator;
-import java.util.List;
 
 public interface UserService {
     // 1. 회원정보 등록
@@ -14,7 +13,7 @@ public interface UserService {
     // 3. 회원정보 삭제
     public boolean deleteUser(String email);
 
-    // 4. 모든 회원정보 반환 (List 형태)
+    // 4. 모든 회원정보 반환 (Iterator타입, User 형태로)
     public Iterator<User> getUsers();
 
     // 5. email 해당하는 회원정보가 있을 경우 boolean으로 리턴
